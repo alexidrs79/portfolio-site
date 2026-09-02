@@ -18,26 +18,21 @@ function AuthVisual() {
   )
 }
 
-export function SiteShot({ project, mobile = false }: { project: ProjectData; mobile?: boolean }) {
-  const source = mobile && project.shotMobile ? project.shotMobile : project.shot
-
+export function SiteShot({ project }: { project: ProjectData }) {
   return (
     <div className="site-shot">
-      {project.domain && (
-        <div className="site-shot__chrome" aria-hidden="true">
-          <i /><i /><i />
-          <em>{project.domain}</em>
-        </div>
-      )}
       <div className="site-shot__viewport">
-        {source ? (
-          <img
-            className="site-shot__img"
-            src={source}
-            alt={`${project.title} website`}
-            loading="lazy"
-            decoding="async"
-          />
+        {project.shot ? (
+          <picture>
+            {project.shotMobile && <source media="(max-width: 767px)" srcSet={project.shotMobile} />}
+            <img
+              className="site-shot__img"
+              src={project.shot}
+              alt={`${project.title} website`}
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
         ) : (
           <AuthVisual />
         )}

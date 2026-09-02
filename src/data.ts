@@ -9,8 +9,6 @@ export const profile = {
   linkedin: 'https://www.linkedin.com/in/alexi-dermosesian',
 }
 
-export type ProjectKind = 'corporate' | 'realtyna' | 'one' | 'snap'
-
 export interface ProjectData {
   number: string
   category: string
@@ -18,54 +16,67 @@ export interface ProjectData {
   context: string
   description: string
   technologies: string[]
-  kind: ProjectKind
+  shot?: string
+  shotMobile?: string
   url?: string
 }
 
 export const projects: ProjectData[] = [
   {
     number: '01',
+    category: 'PERSONAL PRODUCT / FINANCE',
+    title: 'Balancil',
+    context: 'PERSONAL PROJECT · 2026',
+    description:
+      'A manual personal ledger I designed and built alone — React and TypeScript on the front, Laravel and Sanctum behind it. Accounts, transactions, budgets, savings goals and spending analytics, with every record scoped to the account that owns it.',
+    technologies: ['React', 'TypeScript', 'Laravel', 'TanStack Query', 'Zod', 'Recharts', 'Vitest'],
+    shot: '/work/balancil.webp',
+    shotMobile: '/work/balancil-mobile.webp',
+  },
+  {
+    number: '02',
+    category: 'PERSONAL PRODUCT / MEDIA',
+    title: 'Stub',
+    context: 'PERSONAL PROJECT · 2026',
+    description:
+      'A private film and television archive on a React front end and an Express, Prisma and Postgres API. State changes run inside transactions so two open tabs cannot disagree, and TMDb responses are cached so the archive still loads when TMDb is down.',
+    technologies: ['React', 'TypeScript', 'Node.js', 'Express', 'Prisma', 'PostgreSQL', 'JWT', 'TMDb API'],
+    shot: '/work/stub.webp',
+    shotMobile: '/work/stub-mobile.webp',
+  },
+  {
+    number: '03',
     category: 'SAAS / TELECOM',
     title: 'Devotel',
     context: 'DEVOTEL · 2025 — PRESENT',
     description:
       'I worked across Devotel’s WordPress site and React interfaces, connecting custom themes, ACF content and interactive components to REST APIs.',
     technologies: ['WordPress', 'React', 'Custom Themes', 'ACF', 'JavaScript (ES6+)', 'PHP', 'REST API'],
-    kind: 'corporate',
+    shot: '/work/devotel.webp',
+    shotMobile: '/work/devotel-mobile.webp',
     url: 'https://devotel.com/',
   },
   {
-    number: '02',
+    number: '04',
     category: 'REAL ESTATE / WORDPRESS',
     title: 'Realtyna',
     context: 'REALTYNA · 2023 — 2024',
     description:
       'I developed WordPress sites and plugins for Realtyna, integrating MLS, IDX and RESO data feeds alongside CRM and payment services.',
     technologies: ['WordPress', 'PHP', 'JavaScript', 'MySQL', 'MLS / IDX APIs', 'CRM'],
-    kind: 'realtyna',
+    shot: '/work/realtyna.webp',
+    shotMobile: '/work/realtyna-mobile.webp',
     url: 'https://realtyna.com/',
   },
   {
-    number: '03',
+    number: '05',
     category: 'SAAS / IDENTITY',
     title: 'Devotel One',
     context: 'DEVOTEL · 2025 — PRESENT',
     description:
       'I worked on this authenticated React workspace for Devotel staff, with Google sign-in, domain-restricted access and WordPress REST API integration.',
     technologies: ['React', 'WordPress', 'REST API', 'Authentication', 'JavaScript (ES6+)', 'PHP'],
-    kind: 'one',
     url: 'https://one.devotel.com/',
-  },
-  {
-    number: '04',
-    category: 'SAAS / DOCUMENT INTELLIGENCE',
-    title: 'Snap',
-    context: 'DEVOTEL · 2025 — PRESENT',
-    description:
-      'I worked on the React and WordPress front end for this accounting product, which prepares invoices, receipts and statements for export by CSV or API.',
-    technologies: ['WordPress', 'React', 'JavaScript (ES6+)', 'REST API', 'PHP', 'Integrations'],
-    kind: 'snap',
-    url: 'https://snaplanding.lucibook.co.uk/',
   },
 ]
 
@@ -76,31 +87,24 @@ export interface ShippedProject {
 }
 
 export const projectIndex: ShippedProject[] = [
+  { name: 'Balancil', meta: 'PERSONAL PROJECT' },
+  { name: 'Stub', meta: 'PERSONAL PROJECT' },
+  { name: 'Lucibook', meta: 'DEVOTEL', url: 'https://lucibook.co.uk/' },
   { name: 'Devotel Corporate Website', meta: 'DEVOTEL', url: 'https://devotel.com/' },
   { name: 'Devotel CMP Platform', meta: 'DEVOTEL', url: 'https://cmp.devotel.com/' },
-  { name: 'Devotel CMP Retail', meta: 'DEVOTEL', url: 'https://cmp-retail.devotel.com/' },
   { name: 'Devotel Hub', meta: 'DEVOTEL', url: 'https://devhub.devotel.com/' },
   { name: 'Devotel One', meta: 'DEVOTEL', url: 'https://one.devotel.com/' },
   { name: 'Snap', meta: 'DEVOTEL', url: 'https://snaplanding.lucibook.co.uk/' },
   { name: 'DocsHub', meta: 'DEVOTEL', url: 'https://docshubs.devotel.com/' },
   { name: 'Esimora eSIM Platform', meta: 'DEVOTEL', url: 'https://esimora.com/' },
-  { name: 'Bracesoft', meta: 'DEVOTEL', url: 'https://bracesoft.com/' },
-  { name: 'Bracecloud', meta: 'DEVOTEL', url: 'https://bracecloud.com/' },
-  { name: 'Zeela Ventures', meta: 'DEVOTEL', url: 'https://zeelaventures.com/' },
-  { name: 'Devostark Inventory Synchronizer', meta: 'DEVOTEL · PLUGIN' },
   { name: 'Fintranet', meta: 'PERSICI LTD', url: 'https://fintranet.io/' },
   { name: 'Fintranet Account', meta: 'PERSICI LTD', url: 'https://account.fintranet.io/' },
   { name: 'Sarafi.uk Currency Calculator', meta: 'PERSICI LTD', url: 'https://sarafi.uk/en' },
   { name: 'UK Exchange', meta: 'PERSICI LTD', url: 'https://uk.exchange/' },
-  { name: 'PFS Ltd', meta: 'PERSICI LTD', url: 'https://pfs.ltd/' },
   { name: 'Realtyna Corporate Website', meta: 'REALTYNA', url: 'https://realtyna.com/' },
   { name: 'Listings.com', meta: 'REALTYNA', url: 'https://listings.com/' },
-  { name: 'Klein Group', meta: 'REALTYNA', url: 'https://kleingroup.com/' },
-  { name: 'New Homes Houston', meta: 'REALTYNA', url: 'https://newhomeshoustontx.com/' },
-  { name: 'Superb Painting', meta: 'DERMOWEB', url: 'https://superbpainting.com/' },
-  { name: 'Premier Edge Painting', meta: 'DERMOWEB', url: 'https://premieredgepainting.com.au/' },
-  { name: 'Superb Two Pak', meta: 'DERMOWEB', url: 'https://superbtwopak.com.au/' },
-  { name: '4Rah Computer', meta: '4RAH COMPUTER', url: 'https://4rahecomputer.com/' },
+  { name: 'Superb Painting', meta: 'FREELANCE', url: 'https://superbpainting.com/' },
+  { name: 'Premier Edge Painting', meta: 'FREELANCE', url: 'https://premieredgepainting.com.au/' },
 ]
 
 export interface ExperienceData {
@@ -122,10 +126,11 @@ export const experience: ExperienceData[] = [
       'I build and maintain React interfaces and custom WordPress platforms, connecting both to REST APIs. My work also covers custom themes, ACF, Custom Post Types, Multisite, performance, deployment and site security.',
     projects: [
       'Devotel Corporate Website',
-      'Devotel',
+      'Devotel CMP Platform',
       'Devotel CMP Retail',
       'Devotel Hub',
       'Devotel One',
+      'Lucibook',
       'Snap',
       'DocsHub',
       'Esimora eSIM Platform',
@@ -199,23 +204,21 @@ export const techGroups: TechGroupData[] = [
     items: [
       'JavaScript (ES6+)',
       'TypeScript',
+      'React',
       'HTML5',
       'CSS3',
       'Sass/SCSS',
-      'React',
-      'React Hooks',
       'CSS Grid & Flexbox',
       'Tailwind CSS',
       'Bootstrap',
-      'Responsive Design',
+      'Responsive Web Design',
       'Cross-browser Compatibility',
-      'Accessibility (WCAG)',
-      'Performance Optimisation',
-      'jQuery',
+      'Web Accessibility (WCAG)',
+      'Performance Optimization',
     ],
   },
   {
-    title: 'Frameworks & Tooling',
+    title: 'Frontend Frameworks & Tooling',
     items: [
       'Next.js',
       'Redux',
@@ -223,46 +226,29 @@ export const techGroups: TechGroupData[] = [
       'React Router',
       'Vite',
       'Webpack',
-      'npm / yarn',
+      'npm/yarn',
     ],
-  },
-  {
-    title: 'WordPress Development',
-    items: [
-      'WordPress Core',
-      'Custom Themes',
-      'Custom Plugins',
-      'Custom Post Types',
-      'ACF',
-      'REST API',
-      'Multisite',
-      'WooCommerce',
-      'Gutenberg Blocks',
-    ],
-  },
-  {
-    title: 'WordPress Builders',
-    items: ['Elementor', 'Flatsome', 'Betheme', 'Avada', 'Woodmart', 'Divi Builder'],
   },
   {
     title: 'Backend & Databases',
     items: [
+      'Node.js',
       'PHP',
       'Laravel',
-      'Node.js',
       'MySQL',
       'SQL',
       'GraphQL',
+      'Database Design & Query Optimization',
+      'Authentication & Authorization',
     ],
   },
   {
     title: 'APIs & Integrations',
     items: [
-      'REST API Development',
+      'REST API Development & Integration',
       'JSON',
-      'Third-party APIs',
-      'Payment Gateways',
-      'API Authentication',
+      'Third-party API Integration',
+      'Payment Gateway Integration',
       'Postman',
     ],
   },
@@ -271,16 +257,26 @@ export const techGroups: TechGroupData[] = [
     items: ['Vitest', 'Jest', 'PHPUnit', 'Pest', 'ESLint', 'Prettier'],
   },
   {
+    title: 'WordPress Development',
+    items: [
+      'WordPress Core',
+      'Custom Theme & Plugin Development',
+      'Advanced Custom Fields (ACF)',
+      'WordPress REST API',
+      'WordPress Multisite',
+      'WooCommerce',
+      'Gutenberg Block Development',
+    ],
+  },
+  {
     title: 'Infrastructure & Security',
     items: [
       'Docker',
       'Linux',
       'Apache',
       'Nginx',
-      'SSL/TLS',
-      'Server Deployment',
-      'Server Security',
-      'Backup Strategies',
+      'SSL/TLS Configuration',
+      'Server Deployment & Security',
     ],
   },
   {
@@ -291,15 +287,13 @@ export const techGroups: TechGroupData[] = [
       'GitLab',
       'Chrome DevTools',
       'Figma',
-      'Photoshop',
-      'Illustrator',
-      'Canva',
-      'UI/UX',
+      'Adobe Photoshop & Illustrator',
+      'UI/UX Principles',
     ],
   },
   {
     title: 'SEO',
-    items: ['Technical SEO', 'On-page Optimisation', 'Content Strategy'],
+    items: ['Technical SEO', 'On-page Optimization', 'Content Strategy'],
   },
 ]
 

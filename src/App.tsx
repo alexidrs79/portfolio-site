@@ -14,6 +14,7 @@ import {
   education,
   experience,
   languages,
+  profile,
   projectIndex,
   projects,
   techGroups,
@@ -36,12 +37,17 @@ function App() {
               <SectionHeading
                 index="01 / 06"
                 title="SELECTED WORK"
-                copy="Four projects from my work in telecom, real estate and accounting software."
+                copy="Two products of my own, plus platform work in telecom and real estate."
               />
             </div>
             <div className="project-list">
               {projects.map((project, index) => (
-                <Project key={project.title} project={project} index={index} />
+                <Project
+                  key={project.title}
+                  project={project}
+                  index={index}
+                  total={projects.length}
+                />
               ))}
             </div>
             <motion.div
@@ -52,7 +58,7 @@ function App() {
               transition={{ duration: reducedMotion ? 0 : 0.6 }}
             >
               <span className="work-index__label">
-                ALSO SHIPPED <em>{projectIndex.length} PROJECTS</em>
+                ALSO SHIPPED <em>A SELECTION OF {projectIndex.length}</em>
               </span>
               <ul style={{ '--index-rows': Math.ceil(projectIndex.length / 2) } as CSSProperties}>
                 {projectIndex.map((item, position) => {
@@ -77,6 +83,10 @@ function App() {
                   )
                 })}
               </ul>
+              <p className="work-index__note">
+                Six years of client sites, platform work and plugins sit behind this list.{' '}
+                <a href="#contact">Ask me for the full rundown</a>.
+              </p>
             </motion.div>
           </div>
         </section>
@@ -121,6 +131,15 @@ function App() {
                 </span>
               </p>
               <div className="about__copy">
+                <img
+                  className="about__portrait"
+                  src="/alexi.webp"
+                  alt={profile.name}
+                  width={657}
+                  height={855}
+                  loading="lazy"
+                  decoding="async"
+                />
                 <span>PROFILE / YEREVAN</span>
                 <p>
                   I&apos;m Alexi, a full-stack web developer with six years in the IT industry,
