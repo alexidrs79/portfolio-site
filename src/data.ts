@@ -4,7 +4,7 @@ export const profile = {
   specialism: 'REACT · WORDPRESS · PHP',
   location: 'YEREVAN, ARMENIA',
   email: 'alexi.drs79@gmail.com',
-  phone: '+98 901 638 5480',
+  phone: '+374 41 044 241',
   github: 'https://github.com/alexidrs79',
   linkedin: 'https://www.linkedin.com/in/alexi-dermosesian',
 }
@@ -89,7 +89,7 @@ export interface ShippedProject {
 export const projectIndex: ShippedProject[] = [
   { name: 'Balancil', meta: 'PERSONAL PROJECT' },
   { name: 'Stub', meta: 'PERSONAL PROJECT' },
-  { name: 'Lucibook', meta: 'DEVOTEL', url: 'https://lucibook.co.uk/' },
+  { name: 'Lucibook', meta: 'DEVOTEL', url: 'https://landingpage.lucibook.co.uk/' },
   { name: 'Devotel Corporate Website', meta: 'DEVOTEL', url: 'https://devotel.com/' },
   { name: 'Devotel CMP Platform', meta: 'DEVOTEL', url: 'https://cmp.devotel.com/' },
   { name: 'Devotel Hub', meta: 'DEVOTEL', url: 'https://devhub.devotel.com/' },
