@@ -32,6 +32,7 @@ export const projects: ProjectData[] = [
     technologies: ['React', 'TypeScript', 'Laravel', 'TanStack Query', 'Zod', 'Recharts', 'Vitest'],
     shot: '/work/balancil.webp',
     shotMobile: '/work/balancil-mobile.webp',
+    url: 'https://balancil.vercel.app/',
   },
   {
     number: '02',
@@ -43,6 +44,7 @@ export const projects: ProjectData[] = [
     technologies: ['React', 'TypeScript', 'Node.js', 'Express', 'Prisma', 'PostgreSQL', 'JWT', 'TMDb API'],
     shot: '/work/stub.webp',
     shotMobile: '/work/stub-mobile.webp',
+    url: 'https://stub-du13.onrender.com/',
   },
   {
     number: '03',
